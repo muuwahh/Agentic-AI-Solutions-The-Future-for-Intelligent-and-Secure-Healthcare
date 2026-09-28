@@ -1,0 +1,89 @@
+{
+  "workflow": "local research demonstration",
+  "steps": [
+    "Autonomous Data Processing",
+    "Adaptive Decision Support",
+    "Predictive Analytics"
+  ],
+  "model_selection": "FNN classification and Isolation Forest anomaly detection",
+  "patient_prediction": {
+    "prediction": "Class 0",
+    "probability": 0.491861,
+    "class_probabilities": {
+      "Class 0": 0.491861,
+      "Class 1": 0.47447,
+      "Class 2": 0.033669
+    },
+    "model_version": "1.0",
+    "features": {
+      "age": 55.0,
+      "heart_rate": 72.0,
+      "spo2": 97.0,
+      "temperature": 36.8,
+      "systolic_bp": 120.0,
+      "diastolic_bp": 78.0,
+      "lab_marker_a": 0.2,
+      "lab_marker_b": -0.1,
+      "history_indicator_a": 0.0,
+      "history_indicator_b": 1.0,
+      "motion": 0.4,
+      "sleep_hours": 7.0
+    },
+    "selected_features": [
+      "age",
+      "heart_rate",
+      "temperature",
+      "systolic_bp",
+      "lab_marker_a",
+      "lab_marker_b",
+      "history_indicator_a",
+      "history_indicator_b",
+      "motion",
+      "sleep_hours"
+    ],
+    "important_features": [
+      {
+        "feature": "history_indicator_a",
+        "probability_change": 0.394057
+      },
+      {
+        "feature": "motion",
+        "probability_change": 0.27437
+      },
+      {
+        "feature": "lab_marker_a",
+        "probability_change": -0.093212
+      },
+      {
+        "feature": "heart_rate",
+        "probability_change": -0.023988
+      },
+      {
+        "feature": "sleep_hours",
+        "probability_change": -0.016806
+      }
+    ],
+    "explanation_method": "single-feature replacement with training medians; descriptive, not causal",
+    "disclaimer": "Research prototype only. Synthetic benchmark classes are not diagnoses or clinical risk estimates."
+  },
+  "wearable_anomaly": {
+    "status": "normal",
+    "anomaly_score": -0.117089,
+    "input": {
+      "heart_rate": 72.0,
+      "spo2": 97.0,
+      "temperature": 36.8,
+      "motion": 0.4
+    },
+    "model": "Isolation Forest",
+    "features": [
+      "heart_rate",
+      "spo2",
+      "temperature",
+      "motion"
+    ],
+    "disclaimer": "Anomaly detection flags unusual input patterns only; an anomaly does not imply illness."
+  },
+  "medical_imaging": "Not implemented",
+  "disclaimer": "Software workflow demonstration only; not autonomous clinical decision-making."
+}
